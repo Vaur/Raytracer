@@ -5,7 +5,7 @@
 ## Login   <devill_x@epitech.net>
 ##
 ## Started on  Mon Jan 13 08:15:23 2014 Xavier Devilliers
-## Last update Fri May 23 23:04:33 2014 vaur
+## Last update Mon May 26 16:37:04 2014 vaur
 ##
 
 ########################################################################
@@ -70,7 +70,8 @@ D_NAME =		./
 
 SD_SRC=			$(shell cd $(D_SRC) && find . -type d | uniq)
 
-SRC=			main.cpp
+SRC=			main.cpp		\
+			MsgBox.cpp
 OBJ =			$(SRC:.cpp=.o)
 
 CSRC =			$(addprefix $(D_SRC),$(SRC))

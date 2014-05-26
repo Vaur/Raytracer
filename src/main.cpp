@@ -5,13 +5,23 @@
 // Login   <vaur@epitech.net>
 //
 // Started on  Fri May 23 23:01:22 2014 vaur
-// Last update Fri May 23 23:03:58 2014 vaur
+// Last update Mon May 26 16:41:57 2014 vaur
 //
 
-#include	<iostream>
+/*
+** Include
+*/
+
+#include	"MsgBox.hpp"
+
+/*
+** Functions
+*/
 
 int		main(int argc, char **argv)
 {
-  std::cout << "raytracer" << std::endl;
+  MsgBox	msgbox(argv[0]);
+
+  msgbox << "test";
   return (0);
 }
