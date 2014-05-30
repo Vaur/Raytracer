@@ -5,13 +5,15 @@
 // Login   <vaur@epitech.net>
 //
 // Started on  Sat May 24 13:44:59 2014 vaur
-// Last update Mon May 26 16:41:26 2014 vaur
+// Last update Fri May 30 17:08:01 2014 vaur
 //
 
 /*
 ** Include
 */
 
+#include	<map>
+#include	"DecorateBracket.hpp"
 #include	"MsgBox.hpp"
 
 /*
@@ -44,3 +46,31 @@ void		MsgBox::setMode(MsgBox::t_mode mode)
 {
   this->_mode = mode;
 }
+
+MsgBox			&MsgBox::decorate()
+{
+  DecorateBracket	decorate;
+  decorate << _progname;
+  *this << _progname;
+  return (*this);
+}
+
+/*
+**
+** Private
+**
+*/
+
+// std::string			MsgBox::ModeToString()
+// {
+//   std::map<t_type, std::string>	map_mode;
+//   std::string			ret;
+
+//   map_mode[ERROR] = "ERROR";
+//   map_mode[INFO] = "INFO";
+//   map_mode[WARNING] = "WARNING";
+//   map_mode[DEBUG] = "DEBUG";
+
+//   ret << DecorateBracket  << map_mode[this->_mode];
+//   return (ret);
+// }

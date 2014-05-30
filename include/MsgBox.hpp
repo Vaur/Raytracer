@@ -5,7 +5,7 @@
 // Login   <vaur@epitech.net>
 //
 // Started on  Fri May 23 23:08:47 2014 vaur
-// Last update Fri May 30 16:54:24 2014 vaur
+// Last update Fri May 30 17:02:32 2014 vaur
 //
 
 #ifndef		MSGBOX_H
@@ -25,6 +25,7 @@
 class			MsgBox
 {
 public:
+
   //enum
   enum			t_mode
     {
@@ -43,12 +44,15 @@ public:
   void			setMode(t_mode mode);
 
   template <class T>
-  MsgBox	&operator<<(const T &msg)
+  MsgBox		&operator<<(const T &msg)
   {
-    std::cout << _progname << " ";
+    // std::cout << _progname << " ";
     std::cout << msg << std::endl;;
     return (*this);
   }
+
+  //decoration of msg;
+  MsgBox		&decorate();
 
 private:
   MsgBox::t_mode	_mode;
