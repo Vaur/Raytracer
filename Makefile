@@ -5,7 +5,7 @@
 ## Login   <devill_x@epitech.net>
 ##
 ## Started on  Mon Jan 13 08:15:23 2014 Xavier Devilliers
-## Last update Mon May 26 16:37:04 2014 vaur
+## Last update Fri May 30 16:45:19 2014 vaur
 ##
 
 ########################################################################
@@ -70,7 +70,8 @@ D_NAME =		./
 
 SD_SRC=			$(shell cd $(D_SRC) && find . -type d | uniq)
 
-SRC=			main.cpp		\
+SRC=			DecorateBracket.cpp	\
+			main.cpp		\
 			MsgBox.cpp
 OBJ =			$(SRC:.cpp=.o)
 
