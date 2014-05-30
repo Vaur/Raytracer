@@ -5,7 +5,7 @@
 // Login   <vaur@epitech.net>
 //
 // Started on  Fri May 23 23:08:47 2014 vaur
-// Last update Mon May 26 16:40:55 2014 vaur
+// Last update Fri May 30 16:54:24 2014 vaur
 //
 
 #ifndef		MSGBOX_H
@@ -29,7 +29,7 @@ public:
   enum			t_mode
     {
       ERROR,
-      DISPLAY,
+      DEBUG,
       INFO,
       WARNING
     };
