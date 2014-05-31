@@ -5,7 +5,7 @@
 // Login   <vaur@epitech.net>
 //
 // Started on  Sat May 24 13:44:59 2014 vaur
-// Last update Fri May 30 17:08:01 2014 vaur
+// Last update Fri May 30 18:10:37 2014 vaur
 //
 
 /*
@@ -47,12 +47,46 @@ void		MsgBox::setMode(MsgBox::t_mode mode)
   this->_mode = mode;
 }
 
-MsgBox			&MsgBox::decorate()
+MsgBox			&MsgBox::decorateIn()
 {
   DecorateBracket	decorate;
+  std::string		mode_str;
+
   decorate << _progname;
-  *this << _progname;
+  mode_str = ModeToString();
+  *this << _progname << " " << mode_str << " ";
   return (*this);
+}
+
+MsgBox			&MsgBox::decorateIn(const char *func, int line)
+{
+  DecorateBracket	decorate;
+  std::string		mode_str;
+  std::string		func_str;
+  std::string		line_str;
+
+  mode_str = ModeToString();
+  func_str = func;
+  line_str = line;
+
+  std::string		test(line);
+
+  std::cout << "line: " << line << " test: "<<  line <<std::endl;
+
+  decorate << _progname;
+  decorate << mode_str;
+  decorate << func_str;
+  decorate << line_str;
+
+  *this << _progname << " " << mode_str << " " << func_str << " " << line_str << " ";
+  return (*this);
+}
+
+void			MsgBox::decorateOut()
+{
+  std::cout << std::endl;
+  // if (_log_on == true)
+
 }
 
 /*
@@ -61,16 +95,17 @@ MsgBox			&MsgBox::decorate()
 **
 */
 
-// std::string			MsgBox::ModeToString()
-// {
-//   std::map<t_type, std::string>	map_mode;
-//   std::string			ret;
+std::string				MsgBox::ModeToString()
+{
+  DecorateBracket			decorate;
+  std::map<MsgBox::t_mode, std::string>	map_mode;
+  std::string				ret;
 
-//   map_mode[ERROR] = "ERROR";
-//   map_mode[INFO] = "INFO";
-//   map_mode[WARNING] = "WARNING";
-//   map_mode[DEBUG] = "DEBUG";
+  map_mode[MsgBox::ERROR] = "error";
+  map_mode[MsgBox::INFO] = "info";
+  map_mode[MsgBox::WARNING] = "warning";
+  map_mode[MsgBox::DEBUG] = "debug";
 
-//   ret << DecorateBracket  << map_mode[this->_mode];
-//   return (ret);
-// }
+  ret = map_mode[this->_mode];
+  return (ret);
+}
