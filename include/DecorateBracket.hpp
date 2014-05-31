@@ -5,7 +5,7 @@
 // Login   <vaur@epitech.net>
 //
 // Started on  Fri May 30 16:30:42 2014 vaur
-// Last update Fri May 30 16:51:35 2014 vaur
+// Last update Sat May 31 02:31:40 2014 vaur
 //
 
 #ifndef		DECORATEBRACKET_H
@@ -21,6 +21,10 @@
 ** Class
 */
 
+/**
+ * Simple class that decorate a string with bracket defined in constructor
+ */
+
 class DecorateBracket
 {
 public:
@@ -29,7 +33,7 @@ public:
   DecorateBracket();
   ~DecorateBracket();
 
-  //operate overload
+  //operator overload
   std::string	&operator<<(std::string &str);
 
 private:
