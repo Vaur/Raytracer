@@ -5,7 +5,7 @@
 // Login   <vaur@epitech.net>
 //
 // Started on  Sat May 31 04:49:43 2014 vaur
-// Last update Sat May 31 04:58:21 2014 vaur
+// Last update Sun Jun  1 00:15:21 2014 vaur
 //
 
 /** \file Coordonate.hpp
@@ -23,7 +23,7 @@
  * Provide a set of coordonate in space and some functions to handle them.
  */
 
-class Coordonate
+class		Coordonate
 {
 public:
   /** Type of unit used by Coordonate */
@@ -38,11 +38,17 @@ public:
   t_unit	getY() const;
   t_unit	getZ() const;
 
+  //operator overload
+  bool		operator==(const Coordonate &o);
+
 private:
   t_unit	_x;
   t_unit	_y;
   t_unit	_z;
 
 };
+
+//operator overload
+std::ostream	&operator<<(std::ostream &o, const Coordonate &coord);
 
 #endif      /* !COORDONATE_H_ */

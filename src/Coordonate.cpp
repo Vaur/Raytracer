@@ -5,7 +5,7 @@
 // Login   <vaur@epitech.net>
 //
 // Started on  Sat May 31 04:54:31 2014 vaur
-// Last update Sat May 31 05:13:05 2014 vaur
+// Last update Sun Jun  1 00:13:42 2014 vaur
 //
 
 /** \file Coordonate.cpp
@@ -16,6 +16,7 @@
 ** Include
 */
 
+#include	<ostream>
 #include	"Coordonate.hpp"
 
 /**
@@ -49,17 +50,50 @@ Coordonate::~Coordonate()
 ** Getter
 */
 
+/**
+ * @return x part of the coordonate
+ */
+
 Coordonate::t_unit	Coordonate::getX() const
 {
   return (_x);
 }
+
+/**
+ * @return y part of the coordonate
+ */
 
 Coordonate::t_unit	Coordonate::getY() const
 {
   return (_y);
 }
 
+/**
+ * @return z part of the coordonate
+ */
+
 Coordonate::t_unit	Coordonate::getZ() const
 {
   return (_z);
+}
+
+/**
+ * Operator overload to compare coordonates
+ */
+
+bool	Coordonate::operator==(const Coordonate &o)
+{
+  if (this->_x == o.getX() && this->_y == o.getY() && this->_z == o.getZ())
+    return (true);
+  return (false);
+}
+
+/**
+ * Operator overload for display
+ */
+
+std::ostream	&operator<<(std::ostream &o, const Coordonate &coord)
+{
+  o << "(" << coord.getX() << ", " << coord.getY() << ", " << coord.getZ() << ")";
+  return (o);
 }
