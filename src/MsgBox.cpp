@@ -5,8 +5,12 @@
 // Login   <vaur@epitech.net>
 //
 // Started on  Sat May 24 13:44:59 2014 vaur
-// Last update Sat May 31 02:19:40 2014 vaur
+// Last update Sat May 31 04:18:30 2014 vaur
 //
+
+/** \file MsgBox.cpp
+ * Functions for class MsgBox
+ */
 
 /*
 ** Include
