@@ -5,7 +5,7 @@
 ## Login   <devill_x@epitech.net>
 ##
 ## Started on  Mon Jan 13 08:15:23 2014 Xavier Devilliers
-## Last update Fri May 30 16:45:19 2014 vaur
+## Last update Sat May 31 02:26:18 2014 vaur
 ##
 
 ########################################################################
@@ -15,7 +15,7 @@
 ##################
 ## 	debug
 
-DEBUG=			yes
+DEBUG=			no
 export DEBUG
 
 INFO=			yes
@@ -162,10 +162,11 @@ clean:
 
 fclean:			clean
 			@$(E)  "$(D_IN)Deleting $(NAME)$(D_OUT)"
-			$(RM) $(CNAME)
-			$(RM) -r $(D_OBJ)
-			find . -name '*~' -delete
-			find . -name '#*#' -delete
+			@$(RM) $(CNAME)
+			@$(RM) -r $(D_OBJ)
+			@$(RM) -r doc/latex doc/html
+			@find . -name '*~' -delete
+			@find . -name '#*#' -delete
 			@$(E)  "$(SEP)"
 
 ##################
@@ -216,11 +217,15 @@ buildrepo:
 
 ##################
 ##	commit
+
 git:			fclean
 			@$(E) "$(D_IN)Sending files\t$(D_OUT)"
 			@$(E) "$(C_IN)-$(C_OUT) commit msg$(C_IN): $(C_OUT)"
 			read msg && git commit -a -m "$$msg"
 
+
+##################
+##	Backup
 
 backup:
 			@$(E) "$(D_IN)Creating backup\t$(D_OUT)"
@@ -228,8 +233,16 @@ backup:
 			@mv ../$(BACKUP_NAME) .
 			@$(E) "$(D_IN)Backup successfully created$(D_OUT)"
 
+##################
+##	Documentation
+
+doc:
+			@$(E) "$(D_IN)Creating Documentation$(D_OUT)"
+			@doxygen doc/Doxyfile
+			@$(E) "$(D_IN)Documentation Generated$(D_OUT)"
+
 
 ##################
 ## 	.PHONY
 
-.PHONY:			re clean fclean all fclean buildrepo disp_init git debug lib libclean libfclean backup
+.PHONY:			re clean fclean all fclean buildrepo disp_init git debug lib libclean libfclean backup doc
