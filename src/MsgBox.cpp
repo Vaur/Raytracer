@@ -5,7 +5,7 @@
 // Login   <vaur@epitech.net>
 //
 // Started on  Sat May 24 13:44:59 2014 vaur
-// Last update Sat May 31 04:43:45 2014 vaur
+// Last update Sun Jun  1 00:27:22 2014 vaur
 //
 
 /** \file MsgBox.cpp
@@ -93,17 +93,19 @@ MsgBox			&MsgBox::decorateIn(const char *func, int line)
   std::string		mode_str;
   std::string		func_str;
   std::string		line_str;
+  std::string		progname_str;
 
   mode_str = ModeToString();
   func_str = func;
   line_str = line;
+  progname_str = _progname;
 
-  decorate << _progname;
+  decorate << progname_str;
   decorate << mode_str;
   decorate << func_str;
   decorate << line_str;
 
-  *this << _progname << " " << mode_str << " " << func_str << " " << line_str << " ";
+  *this << progname_str << " " << mode_str << " " << func_str << " " << line_str << " ";
   return (*this);
 }
 
