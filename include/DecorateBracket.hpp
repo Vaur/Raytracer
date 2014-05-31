@@ -5,8 +5,10 @@
 // Login   <vaur@epitech.net>
 //
 // Started on  Fri May 30 16:30:42 2014 vaur
-// Last update Sat May 31 02:31:40 2014 vaur
+// Last update Sat May 31 03:23:25 2014 vaur
 //
+
+/** @file */
 
 #ifndef		DECORATEBRACKET_H
 # define	DECORATEBRACKET_H
