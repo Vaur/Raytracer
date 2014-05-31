@@ -5,7 +5,7 @@
 // Login   <vaur@epitech.net>
 //
 // Started on  Fri May 23 23:01:22 2014 vaur
-// Last update Fri May 30 17:47:08 2014 vaur
+// Last update Sun Jun  1 00:24:46 2014 vaur
 //
 
 /*
@@ -13,6 +13,7 @@
 */
 
 #include	<string>
+#include	"Coordonate.hpp"
 #include	"MsgBox.hpp"
 
 /*
@@ -22,14 +23,27 @@
 int			main(int argc, char **argv)
 {
   MsgBox		msgbox(argv[0]);
-  // DecorateBracket	decorate;
+  Coordonate		coord1(3.1, 4.5 , 5.2);
+  Coordonate		coord2(3.1, 4.5 , 5.2);
+  Coordonate		coord3(3.1, 4.6 , 5.2);
 
-  std::string	test;
 
-  test = "test";
-
-  // INFO(test);
-  // msgbox.decorateIn() << test; msgbox.decorateOut();
-  MSG(test);
+  MSG(coord1);
+  if (coord1 == coord2)
+    {
+      MSG("good");
+    }
+  else
+    {
+      MSG("False");
+    }
+  if (coord1 == coord3)
+    {
+      MSG("False");
+    }
+  else
+    {
+      MSG("good");
+    }
   return (0);
 }
