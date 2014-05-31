@@ -5,7 +5,7 @@
 // Login   <vaur@epitech.net>
 //
 // Started on  Sat May 24 13:44:59 2014 vaur
-// Last update Sat May 31 04:18:30 2014 vaur
+// Last update Sat May 31 04:43:45 2014 vaur
 //
 
 /** \file MsgBox.cpp
@@ -28,6 +28,10 @@
 ** CTOR
 */
 
+/**
+ * Constructor takes as parameter the name of the program.
+ */
+
 MsgBox::MsgBox(const std::string &progname)
 {
   this->_mode = MsgBox::INFO;
@@ -46,10 +50,20 @@ MsgBox::~MsgBox()
 ** Setter
 */
 
+/**
+ * Set the mode for the messages that are coming.
+ */
+
 void		MsgBox::setMode(MsgBox::t_mode mode)
 {
   this->_mode = mode;
 }
+
+
+/**
+ * Decoration that is put before the message to display
+ * @return reference to MsgBox object for operator overload.
+ */
 
 MsgBox			&MsgBox::decorateIn()
 {
@@ -64,6 +78,14 @@ MsgBox			&MsgBox::decorateIn()
   *this << _progname << " " << mode_str << " ";
   return (*this);
 }
+
+/**
+ * \copydoc decorateIn
+ * @param[in] func the name of the function where MsgBox is called
+ * @param[in] line the line where MsgBox is called
+ * Both parameters are defined by compilator.
+ * This function is called when program is compiled in debug mode \see MSG
+ */
 
 MsgBox			&MsgBox::decorateIn(const char *func, int line)
 {
@@ -85,6 +107,10 @@ MsgBox			&MsgBox::decorateIn(const char *func, int line)
   return (*this);
 }
 
+/**
+ * Decoration that is put after the message to display, usually `std::endl` but might be subject to change.
+ */
+
 void			MsgBox::decorateOut()
 {
   std::cout << std::endl;
@@ -97,6 +123,10 @@ void			MsgBox::decorateOut()
 ** Private
 **
 */
+
+/**
+ * Return a `std::string` that describe the current mode.
+ */
 
 std::string				MsgBox::ModeToString()
 {

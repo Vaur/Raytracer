@@ -5,7 +5,7 @@
 // Login   <vaur@epitech.net>
 //
 // Started on  Fri May 23 23:08:47 2014 vaur
-// Last update Sat May 31 04:37:55 2014 vaur
+// Last update Sat May 31 04:46:01 2014 vaur
 //
 
 /** \file MsgBox.hpp
@@ -76,16 +76,11 @@ public:
       WARNING
     };
 
-  /**
-   * Constructor takes as parameter the name of the program.
-   */
-
+  //ctor & dtor
   MsgBox(const std::string &progname);
   ~MsgBox();
 
-  /**
-   * Set the mode for the messages that are coming.
-   */
+  //setter
   void			setMode(t_mode mode);
 
   /**
@@ -101,47 +96,18 @@ public:
     return (*this);
   }
 
-  /**
-   * Decoration that is put before the message to display
-   * @return reference to MsgBox object for operator overload.
-   */
-
+  //decoration
   MsgBox		&decorateIn();
-
-  /**
-   * \copydoc decorateIn
-   * @param[in] func the name of the function where MsgBox is called
-   * @param[in] line the line where MsgBox is called
-   * Both parameters are defined by compilator.
-   * This function is called when program is compiled in debug mode \see MSG
-   */
-
   MsgBox		&decorateIn(const char *func, int line);
-
-  /**
-   * Decoration that is put after the message to display, usually `std::endl` but might be subject to change.
-   */
-
   void			decorateOut();
 
 private:
-
-  /**
-   * Return a `std::string` that describe the current mode.
-   */
-
   std::string		ModeToString();
 
-  /**
-   * Mode of messages to display.
-   */
-
+  /** Mode of messages to display. */
   MsgBox::t_mode	_mode;
 
-  /**
-   * Program name given as argument to constructor.
-   */
-
+  /** Program name given as argument to constructor. */
   std::string		_progname;
 };
 
