@@ -5,7 +5,7 @@
 // Login   <vaur@epitech.net>
 //
 // Started on  Fri May 30 16:36:40 2014 vaur
-// Last update Fri May 30 16:48:23 2014 vaur
+// Last update Sat May 31 02:32:36 2014 vaur
 //
 
 /*
@@ -36,9 +36,10 @@ DecorateBracket::~DecorateBracket()
 {
 }
 
-/*
-** Operator Overload
-*/
+/**
+ * Operator overload on std::string that will do the decoration
+ * according to bracketIn and bracketOut defined in constructor
+ */
 
 std::string	&DecorateBracket::operator<<(std::string &str)
 {
