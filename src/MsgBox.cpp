@@ -5,7 +5,7 @@
 // Login   <vaur@epitech.net>
 //
 // Started on  Sat May 24 13:44:59 2014 vaur
-// Last update Fri May 30 18:10:37 2014 vaur
+// Last update Sat May 31 02:19:40 2014 vaur
 //
 
 /*
@@ -52,8 +52,11 @@ MsgBox			&MsgBox::decorateIn()
   DecorateBracket	decorate;
   std::string		mode_str;
 
-  decorate << _progname;
   mode_str = ModeToString();
+
+  decorate << _progname;
+  decorate << mode_str;
+
   *this << _progname << " " << mode_str << " ";
   return (*this);
 }
@@ -68,10 +71,6 @@ MsgBox			&MsgBox::decorateIn(const char *func, int line)
   mode_str = ModeToString();
   func_str = func;
   line_str = line;
-
-  std::string		test(line);
-
-  std::cout << "line: " << line << " test: "<<  line <<std::endl;
 
   decorate << _progname;
   decorate << mode_str;
