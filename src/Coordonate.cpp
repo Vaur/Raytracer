@@ -5,7 +5,7 @@
 // Login   <vaur@epitech.net>
 //
 // Started on  Sat May 31 04:54:31 2014 vaur
-// Last update Sun Jun  1 00:13:42 2014 vaur
+// Last update Sun Jun  1 01:26:39 2014 vaur
 //
 
 /** \file Coordonate.cpp
@@ -18,10 +18,6 @@
 
 #include	<ostream>
 #include	"Coordonate.hpp"
-
-/**
- * @todo operator overload == for Coordonate cmp
- */
 
 /*
 ** Functions

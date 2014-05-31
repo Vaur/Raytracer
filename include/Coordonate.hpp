@@ -5,7 +5,7 @@
 // Login   <vaur@epitech.net>
 //
 // Started on  Sat May 31 04:49:43 2014 vaur
-// Last update Sun Jun  1 00:15:21 2014 vaur
+// Last update Sun Jun  1 01:26:18 2014 vaur
 //
 
 /** \file Coordonate.hpp
@@ -21,6 +21,9 @@
 
 /**
  * Provide a set of coordonate in space and some functions to handle them.
+ * @done 01/06/2014:
+ *	- Coordonate::operator==(const Coordonate &o);
+ *	- operator<<(std::ostream &o, const Coordonate &coord);
  */
 
 class		Coordonate
