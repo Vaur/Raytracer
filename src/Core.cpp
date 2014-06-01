@@ -5,7 +5,7 @@
 // Login   <vaur@epitech.net>
 //
 // Started on  Sun Jun  1 01:57:37 2014 vaur
-// Last update Sun Jun  1 02:09:53 2014 vaur
+// Last update Sun Jun  1 07:56:43 2014 vaur
 //
 
 /** \file Core.cpp
@@ -31,9 +31,8 @@
  * Constructor receive the same arguments a the main and feed it to Config
  */
 
-Core::Core(int argc, char **argv) : msgbox(argv[0])
+Core::Core(int argc, char **argv) : msgbox(argv[0]), _conf(argc, argv, msgbox)
 {
-  MSG("");
 }
 
 Core::~Core()
