@@ -5,7 +5,7 @@
 // Login   <vaur@epitech.net>
 //
 // Started on  Sat May 24 13:44:59 2014 vaur
-// Last update Sun Jun  1 00:27:22 2014 vaur
+// Last update Sun Jun  1 03:34:03 2014 vaur
 //
 
 /** \file MsgBox.cpp
@@ -17,6 +17,7 @@
 */
 
 #include	<map>
+#include	<sstream>
 #include	"DecorateBracket.hpp"
 #include	"MsgBox.hpp"
 
@@ -85,6 +86,7 @@ MsgBox			&MsgBox::decorateIn()
  * @param[in] line the line where MsgBox is called
  * Both parameters are defined by compilator.
  * This function is called when program is compiled in debug mode \see MSG
+ * @done 01/06/2014: line is now displayed properly
  */
 
 MsgBox			&MsgBox::decorateIn(const char *func, int line)
@@ -92,12 +94,14 @@ MsgBox			&MsgBox::decorateIn(const char *func, int line)
   DecorateBracket	decorate;
   std::string		mode_str;
   std::string		func_str;
+  std::stringstream	line_strstream;
   std::string		line_str;
   std::string		progname_str;
 
   mode_str = ModeToString();
   func_str = func;
-  line_str = line;
+  line_strstream << line;
+  line_str = line_strstream.str();
   progname_str = _progname;
 
   decorate << progname_str;
@@ -105,7 +109,7 @@ MsgBox			&MsgBox::decorateIn(const char *func, int line)
   decorate << func_str;
   decorate << line_str;
 
-  *this << progname_str << " " << mode_str << " " << func_str << " " << line_str << " ";
+  *this << progname_str << " " << mode_str << " " << func_str << "\t" << line_str << " ";
   return (*this);
 }
 
