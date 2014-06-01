@@ -5,7 +5,7 @@
 // Login   <vaur@epitech.net>
 //
 // Started on  Sat May 24 13:44:59 2014 vaur
-// Last update Sun Jun  1 03:34:03 2014 vaur
+// Last update Sun Jun  1 03:38:19 2014 vaur
 //
 
 /** \file MsgBox.cpp
@@ -70,13 +70,15 @@ MsgBox			&MsgBox::decorateIn()
 {
   DecorateBracket	decorate;
   std::string		mode_str;
+  std::string		progname_str;
 
   mode_str = ModeToString();
+  progname_str = _progname;
 
-  decorate << _progname;
+  decorate << progname_str;
   decorate << mode_str;
 
-  *this << _progname << " " << mode_str << " ";
+  *this << progname_str << " " << mode_str << " ";
   return (*this);
 }
 
