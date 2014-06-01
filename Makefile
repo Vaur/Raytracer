@@ -5,7 +5,7 @@
 ## Login   <devill_x@epitech.net>
 ##
 ## Started on  Mon Jan 13 08:15:23 2014 Xavier Devilliers
-## Last update Sun Jun  1 03:14:25 2014 vaur
+## Last update Sun Jun  1 07:54:14 2014 vaur
 ##
 
 ########################################################################
@@ -70,7 +70,8 @@ D_NAME =		./
 
 SD_SRC=			$(shell cd $(D_SRC) && find . -type d | uniq)
 
-SRC=			Coordonate.cpp		\
+SRC=			Config.cpp		\
+			Coordonate.cpp		\
 			Core.cpp		\
 			DecorateBracket.cpp	\
 			main.cpp		\
