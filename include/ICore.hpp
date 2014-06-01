@@ -5,7 +5,7 @@
 // Login   <vaur@epitech.net>
 //
 // Started on  Sun Jun  1 01:54:29 2014 vaur
-// Last update Sun Jun  1 01:56:20 2014 vaur
+// Last update Sun Jun  1 08:29:19 2014 vaur
 //
 
 #ifndef		ICORE_H
@@ -30,7 +30,7 @@ public:
    * @return	value is either `EXIT_FAILURE` or `EXIT_SUCCESS`
    */
 
-  virtual int	run();
+  virtual int	run() = 0;
 };
 
 #endif      /* !ICORE_H_ */
