@@ -5,7 +5,7 @@
 // Login   <vaur@epitech.net>
 //
 // Started on  Sat May 24 13:44:59 2014 vaur
-// Last update Fri Jun  6 19:37:54 2014 vaur
+// Last update Fri Jun  6 19:57:21 2014 vaur
 //
 
 /** \file MsgBox.cpp
@@ -38,6 +38,7 @@ MsgBox::MsgBox(const std::string &progname)
 {
   this->_mode = MsgBox::INFO;
   this->_progname = progname;
+  this->_colorEnabled = true;
 }
 
 /*
@@ -222,5 +223,7 @@ std::string						&MsgBox::colorise_string(std::string &str)
   map_mode[MsgBox::WARNING] = StringColorise::MAGENTA;
   map_mode[MsgBox::DEBUG] = StringColorise::YELLOW;
 
-  return (coloriser.colorise(map_mode[this->_mode], str));
+  if (_colorEnabled == true)
+    return (coloriser.colorise(map_mode[this->_mode], str));
+  return (str);
 }

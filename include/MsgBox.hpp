@@ -5,7 +5,7 @@
 // Login   <vaur@epitech.net>
 //
 // Started on  Fri May 23 23:08:47 2014 vaur
-// Last update Fri Jun  6 19:25:59 2014 vaur
+// Last update Fri Jun  6 19:56:23 2014 vaur
 //
 
 /** \file MsgBox.hpp
@@ -120,6 +120,9 @@ private:
 
   /** Program name given as argument to constructor. */
   std::string		_progname;
+
+  /** Enable or disable color */
+  bool			_colorEnabled;
 };
 
 #endif      /* !MSGBOX_H_ */
