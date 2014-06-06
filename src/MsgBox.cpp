@@ -5,7 +5,7 @@
 // Login   <vaur@epitech.net>
 //
 // Started on  Sat May 24 13:44:59 2014 vaur
-// Last update Sun Jun  1 03:38:19 2014 vaur
+// Last update Fri Jun  6 19:37:54 2014 vaur
 //
 
 /** \file MsgBox.cpp
@@ -20,6 +20,7 @@
 #include	<sstream>
 #include	"DecorateBracket.hpp"
 #include	"MsgBox.hpp"
+#include	"StringColorise.hpp"
 
 /*
 ** Functions
@@ -75,10 +76,31 @@ MsgBox			&MsgBox::decorateIn()
   mode_str = ModeToString();
   progname_str = _progname;
 
+  colorise_string(progname_str);
+  colorise_string(mode_str);
+
   decorate << progname_str;
   decorate << mode_str;
 
-  *this << progname_str << " " << mode_str << " ";
+  *this << progname_str << " " << mode_str << "\t";
+  return (*this);
+}
+
+/**
+ * \copydoc decorateIn
+ * @param[in] tmp_mode	temporary mode in which the messgae is displayed
+ *
+ * display a message with a temporary mode in release mode
+ */
+
+MsgBox			&MsgBox::decorateIn(MsgBox::t_mode tmp_mode)
+{
+  MsgBox::t_mode	bk_mode;
+
+  bk_mode = this->_mode;
+  this->_mode = tmp_mode;
+  decorateIn();
+  this->_mode = bk_mode;
   return (*this);
 }
 
@@ -86,6 +108,7 @@ MsgBox			&MsgBox::decorateIn()
  * \copydoc decorateIn
  * @param[in] func the name of the function where MsgBox is called
  * @param[in] line the line where MsgBox is called
+ *
  * Both parameters are defined by compilator.
  * This function is called when program is compiled in debug mode \see MSG
  * @done 01/06/2014: line is now displayed properly
@@ -106,12 +129,45 @@ MsgBox			&MsgBox::decorateIn(const char *func, int line)
   line_str = line_strstream.str();
   progname_str = _progname;
 
+  colorise_string(progname_str);
+  colorise_string(mode_str);
+  colorise_string(func_str);
+  colorise_string(line_str);
+
   decorate << progname_str;
   decorate << mode_str;
   decorate << func_str;
   decorate << line_str;
 
-  *this << progname_str << " " << mode_str << " " << func_str << "\t" << line_str << " ";
+  // std::cout << colorise_string(progname_str) << " " <<  colorise_string(mode_str) << "\t";
+  // std::cout << colorise_string(func_str) << "\t" << colorise_string(line_str) << " ";
+
+  std::cout << progname_str << " " <<  mode_str << "\t";
+  std::cout << func_str << "\t" << line_str << " ";
+
+  return (*this);
+}
+
+/**
+ * \copydoc decorateIn
+ * @param[in] tmp_mode	temporary mode in which the messgae is displayed
+ * @param[in] func	the name of the function where MsgBox is called
+ * @param[in] line	the line where MsgBox is called
+ *
+ * display a message with a temporary mode in debug mode
+ *
+ * as decorateIn(const char *func, int line) func and line are defined by compilator.
+ * This function is called when program is compiled in debug mode \see MSG
+ */
+
+MsgBox			&MsgBox::decorateIn(MsgBox::t_mode tmp_mode, const char *func, int line)
+{
+  MsgBox::t_mode	bk_mode;
+
+  bk_mode = this->_mode;
+  this->_mode = tmp_mode;
+  decorateIn(func, line);
+  this->_mode = bk_mode;
   return (*this);
 }
 
@@ -149,4 +205,22 @@ std::string				MsgBox::ModeToString()
 
   ret = map_mode[this->_mode];
   return (ret);
+}
+
+/**
+ * @param[in] str	take a string and colorize it according to msgmode
+ * @return		return a reference to that string
+ */
+
+std::string						&MsgBox::colorise_string(std::string &str)
+{
+  StringColorise					coloriser;
+  std::map<MsgBox::t_mode, StringColorise::e_Color>	map_mode;
+
+  map_mode[MsgBox::ERROR] = StringColorise::RED;
+  map_mode[MsgBox::INFO] = StringColorise::GREEN;
+  map_mode[MsgBox::WARNING] = StringColorise::MAGENTA;
+  map_mode[MsgBox::DEBUG] = StringColorise::YELLOW;
+
+  return (coloriser.colorise(map_mode[this->_mode], str));
 }

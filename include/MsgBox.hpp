@@ -5,7 +5,7 @@
 // Login   <vaur@epitech.net>
 //
 // Started on  Fri May 23 23:08:47 2014 vaur
-// Last update Sat May 31 04:46:01 2014 vaur
+// Last update Fri Jun  6 19:25:59 2014 vaur
 //
 
 /** \file MsgBox.hpp
@@ -36,7 +36,11 @@
  *  DEBUG_ == 1 means that the program is in debug mode and that more information should be displayed
  */
 
+#  define	DEBUG(msg)	msgbox.decorateIn(MsgBox::DEBUG, __func__, __LINE__) << msg; msgbox.decorateOut()
+#  define	ERROR(msg)	msgbox.decorateIn(MsgBox::ERROR, __func__, __LINE__) << msg; msgbox.decorateOut()
+#  define	INFO(msg)	msgbox.decorateIn(MsgBox::INFO, __func__, __LINE__) << msg; msgbox.decorateOut()
 #  define	MSG(msg)	msgbox.decorateIn(__func__, __LINE__) << msg; msgbox.decorateOut()
+#  define	WARNING(msg)	msgbox.decorateIn(MsgBox::WARNING, __func__, __LINE__) << msg; msgbox.decorateOut()
 
 # else
 
@@ -44,7 +48,11 @@
  *  when program is in release mode, only display program name and type of information displayed
  */
 
+#  define	DEBUG(msg)
+#  define	ERROR(msg)	msgbox.decorateIn(MsgBox::ERROR) << msg; msgbox.decorateOut()
+#  define	INFO(msg)	msgbox.decorateIn(MsgBox::INFO) << msg; msgbox.decorateOut()
 #  define	MSG(msg)	msgbox.decorateIn() << msg; msgbox.decorateOut()
+#  define	WARNING(msg)	msgbox.decorateIn(MsgBox::WARNING) << msg; msgbox.decorateOut()
 
 # endif
 
@@ -70,8 +78,8 @@ public:
 
   enum			t_mode
     {
-      ERROR,
       DEBUG,
+      ERROR,
       INFO,
       WARNING
     };
@@ -98,11 +106,14 @@ public:
 
   //decoration
   MsgBox		&decorateIn();
+  MsgBox		&decorateIn(t_mode tmp_mode);
+  MsgBox		&decorateIn(t_mode tmp_mode, const char *func, int line);
   MsgBox		&decorateIn(const char *func, int line);
   void			decorateOut();
 
 private:
   std::string		ModeToString();
+  std::string		&colorise_string(std::string &str);
 
   /** Mode of messages to display. */
   MsgBox::t_mode	_mode;
