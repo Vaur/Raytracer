@@ -5,7 +5,7 @@
 ## Login   <devill_x@epitech.net>
 ##
 ## Started on  Mon Jan 13 08:15:23 2014 Xavier Devilliers
-## Last update Fri Jun  6 16:26:58 2014 vaur
+## Last update Fri Jun  6 18:14:13 2014 vaur
 ##
 
 ########################################################################
@@ -15,7 +15,7 @@
 ##################
 ## 	debug
 
-DEBUG=			no
+DEBUG=			yes
 export DEBUG
 
 INFO=			yes
@@ -76,7 +76,7 @@ SRC=			Config.cpp		\
 			DecorateBracket.cpp	\
 			main.cpp		\
 			MsgBox.cpp		\
-
+			StringColorise.cpp
 OBJ =			$(SRC:.cpp=.o)
 
 CSRC =			$(addprefix $(D_SRC),$(SRC))
