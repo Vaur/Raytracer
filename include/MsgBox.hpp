@@ -5,7 +5,7 @@
 // Login   <vaur@epitech.net>
 //
 // Started on  Fri May 23 23:08:47 2014 vaur
-// Last update Fri Jun  6 19:56:23 2014 vaur
+// Last update Fri Jun  6 20:40:46 2014 vaur
 //
 
 /** \file MsgBox.hpp
@@ -64,8 +64,13 @@
  * MsgBox is an object to handle messages. Instead of doing `std::cout << msg << std::endl;` call `MSG(msg);`.
  * MsgBox will add severals informations depending on if the program is in debug mode or release mode.
  * If a logfile is set, it will also write inside the file, without color.
+ *
  * @warning function like operator<<(), decorateIn(), decorateOut(), should not be used without MSG macro.
  * Unless you know what you're doing.
+ *
+ * @todo reduce MsgBox in one functions. decorateIn() goes in CTOR, decorateOut() in DTOR,
+ * MsgBox will be returned by a wrapper that will create the Object
+ * @todo respet RFC 5424 about different type of msg and maybe have an object that send info back to syslog
  */
 
 class			MsgBox
