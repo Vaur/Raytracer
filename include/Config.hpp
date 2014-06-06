@@ -5,7 +5,7 @@
 // Login   <vaur@epitech.net>
 //
 // Started on  Sun Jun  1 07:44:34 2014 vaur
-// Last update Sun Jun  1 08:03:50 2014 vaur
+// Last update Fri Jun  6 16:25:53 2014 vaur
 //
 
 #ifndef		CONFIG_H
@@ -14,13 +14,14 @@
 /** \file Config.hpp
  * Define Config class. The Config storage for raytracer
  * @todo add Args class that will parse the arguments and set Config accordingly
+ * @todo put back the inheritance of IConfig
  */
 
 /*
 ** Include
 */
 
-# include	"IConfig.hpp"
+// # include	"IConfig.hpp"
 # include	"MsgBox.hpp"
 
 /*
@@ -31,7 +32,7 @@
  * Store the configuration of the raytracer
  */
 
-class		Config : public IConfig
+class		Config // : public IConfig
 {
 public:
 
