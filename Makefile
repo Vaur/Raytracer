@@ -5,7 +5,7 @@
 ## Login   <devill_x@epitech.net>
 ##
 ## Started on  Mon Jan 13 08:15:23 2014 Xavier Devilliers
-## Last update Sun Jun  1 07:54:14 2014 vaur
+## Last update Fri Jun  6 16:26:58 2014 vaur
 ##
 
 ########################################################################
@@ -15,7 +15,7 @@
 ##################
 ## 	debug
 
-DEBUG=			yes
+DEBUG=			no
 export DEBUG
 
 INFO=			yes
