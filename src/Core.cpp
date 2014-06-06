@@ -5,7 +5,7 @@
 // Login   <vaur@epitech.net>
 //
 // Started on  Sun Jun  1 01:57:37 2014 vaur
-// Last update Sun Jun  1 07:56:43 2014 vaur
+// Last update Fri Jun  6 16:28:13 2014 vaur
 //
 
 /** \file Core.cpp
@@ -46,5 +46,9 @@ Core::~Core()
 int	Core::run()
 {
   MSG("Starting");
+  DEBUG("test");
+  WARNING("Coucou");
+  ERROR("oups");
+  INFO("test");
   return (EXIT_SUCCESS);
 }
