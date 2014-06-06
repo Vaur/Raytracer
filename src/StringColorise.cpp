@@ -5,7 +5,7 @@
 // Login   <vaur@epitech.net>
 //
 // Started on  Fri Jun  6 17:05:48 2014 vaur
-// Last update Fri Jun  6 19:17:54 2014 vaur
+// Last update Fri Jun  6 19:33:07 2014 vaur
 //
 
 /*
@@ -22,14 +22,14 @@
 
 StringColorise::StringColorise()
 {
-  _map_color[StringColorise::BLUE] = "\x1B[34m";
-  _map_color[StringColorise::CYAN] = "\x1B[36m";
-  _map_color[StringColorise::GREEN] = "\x1B[32m";
-  _map_color[StringColorise::MAGENTA] = "\x1B[35m";
+  _map_color[StringColorise::BLUE] = "\x1B[34m\033[1m";
+  _map_color[StringColorise::CYAN] = "\x1B[36m\033[1m";
+  _map_color[StringColorise::GREEN] = "\x1B[32m\033[1m";
+  _map_color[StringColorise::MAGENTA] = "\x1B[35m\033[1m";
   _map_color[StringColorise::NORMAL] = "\x1B[0m";
-  _map_color[StringColorise::RED] = "\x1B[31m";
-  _map_color[StringColorise::WHITE] = "\x1B[37m";
-  _map_color[StringColorise::YELLOW] = "\x1B[33m";
+  _map_color[StringColorise::RED] = "\x1B[31m\033[1m";
+  _map_color[StringColorise::WHITE] = "\x1B[37m\033[1m";
+  _map_color[StringColorise::YELLOW] = "\x1B[33m\033[1m";
 }
 
 StringColorise::~StringColorise()

@@ -5,7 +5,7 @@
 // Login   <vaur@epitech.net>
 //
 // Started on  Fri Jun  6 16:55:20 2014 vaur
-// Last update Fri Jun  6 19:17:33 2014 vaur
+// Last update Fri Jun  6 19:27:07 2014 vaur
 //
 
 #ifndef		STRINGCOLORISE_H
@@ -45,7 +45,7 @@ public:
   StringColorise();
   ~StringColorise();
 
-  std::string	&colorise(e_Color color, std::string &str) const;
+  std::string	&colorise(e_Color color, std::string &str);
 
 private:
   std::map<e_Color, std::string>	_map_color;
