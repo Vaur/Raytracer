@@ -5,7 +5,7 @@
 // Login   <vaur@epitech.net>
 //
 // Started on  Sun Jun  1 07:44:24 2014 vaur
-// Last update Sun Jun  1 07:45:57 2014 vaur
+// Last update Fri Jun  6 08:44:12 2014 vaur
 //
 
 #ifndef		ICONFIG_H
@@ -24,7 +24,9 @@ class		IConfig
 public:
 
   //dtor
-  virtual ~IConfig(){};
+  virtual	~IConfig(){};
+
+  virtual void	setScene(int i, char **argv);
 };
 
 #endif      /* !ICONFIG_H_ */
