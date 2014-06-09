@@ -5,7 +5,7 @@
 ## Login   <vaur@epitech.net>
 ##
 ## Started on  Mon Jun  9 18:04:08 2014 vaur
-## Last update Mon Jun  9 18:19:26 2014 vaur
+## Last update Mon Jun  9 18:21:37 2014 vaur
 ##
 
 
@@ -89,7 +89,7 @@ SEP=			----------------------------------
 ############################
 ##	compilation
 
-all:			disp_init buildrepo lib $(NAME)
+all:			disp_init buildrepo $(NAME)
 ifeq ($(INFO),yes)
 			@$(E)  "$(D_IN)Commit by $(AUT)$(D_OUT)"
 			@$(E)  "$(SEP)"

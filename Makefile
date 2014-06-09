@@ -5,7 +5,7 @@
 ## Login   <devill_x@epitech.net>
 ##
 ## Started on  Mon Jan 13 08:15:23 2014 Xavier Devilliers
-## Last update Mon Jun  9 18:20:43 2014 vaur
+## Last update Mon Jun  9 18:22:22 2014 vaur
 ##
 
 ########################################################################
@@ -15,7 +15,7 @@
 ##################
 ## 	Makeflags
 
-DEBUG=			yes
+DEBUG=			no
 export DEBUG
 
 INFO=			yes
@@ -51,4 +51,4 @@ SRC=			Config.cpp		\
 
 LDIR=			NONE
 
-include			libmake.mk
+include			.libmake.mk
