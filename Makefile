@@ -5,7 +5,7 @@
 ## Login   <devill_x@epitech.net>
 ##
 ## Started on  Mon Jan 13 08:15:23 2014 Xavier Devilliers
-## Last update Mon Jun  9 18:22:22 2014 vaur
+## Last update Thu Jun 19 15:50:47 2014 vaur
 ##
 
 ########################################################################
@@ -15,7 +15,7 @@
 ##################
 ## 	Makeflags
 
-DEBUG=			no
+DEBUG=			yes
 export DEBUG
 
 INFO=			yes
@@ -44,6 +44,7 @@ SRC=			Config.cpp		\
 			DecorateBracket.cpp	\
 			main.cpp		\
 			MsgBox.cpp		\
+			MsgHandler.cpp		\
 			StringColorise.cpp
 
 ##################

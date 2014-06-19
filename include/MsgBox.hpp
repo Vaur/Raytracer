@@ -5,7 +5,7 @@
 // Login   <vaur@epitech.net>
 //
 // Started on  Fri May 23 23:08:47 2014 vaur
-// Last update Fri Jun  6 20:40:46 2014 vaur
+// Last update Tue Jun 10 22:45:43 2014 vaur
 //
 
 /** \file MsgBox.hpp
@@ -36,11 +36,11 @@
  *  DEBUG_ == 1 means that the program is in debug mode and that more information should be displayed
  */
 
-#  define	DEBUG(msg)	msgbox.decorateIn(MsgBox::DEBUG, __func__, __LINE__) << msg; msgbox.decorateOut()
-#  define	ERROR(msg)	msgbox.decorateIn(MsgBox::ERROR, __func__, __LINE__) << msg; msgbox.decorateOut()
-#  define	INFO(msg)	msgbox.decorateIn(MsgBox::INFO, __func__, __LINE__) << msg; msgbox.decorateOut()
-#  define	MSG(msg)	msgbox.decorateIn(__func__, __LINE__) << msg; msgbox.decorateOut()
-#  define	WARNING(msg)	msgbox.decorateIn(MsgBox::WARNING, __func__, __LINE__) << msg; msgbox.decorateOut()
+// #  define	DEBUG(msg)	msgbox.decorateIn(MsgBox::DEBUG, __func__, __LINE__) << msg; msgbox.decorateOut()
+// #  define	ERROR(msg)	msgbox.decorateIn(MsgBox::ERROR, __func__, __LINE__) << msg; msgbox.decorateOut()
+// #  define	INFO(msg)	msgbox.decorateIn(MsgBox::INFO, __func__, __LINE__) << msg; msgbox.decorateOut()
+// #  define	MSG(msg)	msgbox.decorateIn(__func__, __LINE__) << msg; msgbox.decorateOut()
+// #  define	WARNING(msg)	msgbox.decorateIn(MsgBox::WARNING, __func__, __LINE__) << msg; msgbox.decorateOut()
 
 # else
 
@@ -48,13 +48,26 @@
  *  when program is in release mode, only display program name and type of information displayed
  */
 
+// #  define	DEBUG(msg)
+// #  define	ERROR(msg)	msgbox.decorateIn(MsgBox::ERROR) << msg; msgbox.decorateOut()
+// #  define	INFO(msg)	msgbox.decorateIn(MsgBox::INFO) << msg; msgbox.decorateOut()
+// #  define	MSG(msg)	msgbox.decorateIn() << msg; msgbox.decorateOut()
+// #  define	WARNING(msg)	msgbox.decorateIn(MsgBox::WARNING) << msg; msgbox.decorateOut()
+
 #  define	DEBUG(msg)
-#  define	ERROR(msg)	msgbox.decorateIn(MsgBox::ERROR) << msg; msgbox.decorateOut()
-#  define	INFO(msg)	msgbox.decorateIn(MsgBox::INFO) << msg; msgbox.decorateOut()
-#  define	MSG(msg)	msgbox.decorateIn() << msg; msgbox.decorateOut()
-#  define	WARNING(msg)	msgbox.decorateIn(MsgBox::WARNING) << msg; msgbox.decorateOut()
+#  define	ERROR(msg)
+#  define	INFO(msg)
+#  define	MSG(msg)
+#  define	WARNING(msg)
 
 # endif
+
+#  define	DEBUG(msg)
+#  define	ERROR(msg)
+#  define	INFO(msg)
+#  define	MSG(msg)
+#  define	WARNING(msg)
+
 
 /*
 ** Class
@@ -97,13 +110,44 @@ public:
   void			setMode(t_mode mode);
 
   /**
+   * MsgHandler is a small class that receive the message and feed it to the message box.
+   * When it's created it call MsgBox::decorateIn() and MsgBox::decorateOut() when it is destroyed
+   */
+
+  friend class		MsgHandler;
+  class			MsgHandler
+  {
+  public:
+
+    //ctor & dtor
+    MsgHandler(MsgBox &msgbox);
+    MsgHandler(MsgBox &msgbox, const char *func, int line);
+    ~MsgHandler();
+
+    /** operator overload that feed every msg back to MsgBox */
+    template <class T>
+    MsgHandler		&operator<<(const T msg)
+    {
+      *_msgbox << msg;
+      return (*this);
+    }
+
+  private:
+    MsgBox		*_msgbox;
+  };
+
+  MsgHandler		info();
+private:
+
+
+  /**
    * Templated operator overload, takes everything and put it into std::cout
    * @todo if msg mode is error instead of output on `std::cout` output on `std::cerr`
    * @todo if log is enabled also redirect msg into stream to logfile.
    */
 
   template <class T>
-  MsgBox		&operator<<(const T &msg)
+  MsgBox		&operator<<(const T msg)
   {
     std::cout << msg;
     return (*this);
@@ -116,7 +160,6 @@ public:
   MsgBox		&decorateIn(const char *func, int line);
   void			decorateOut();
 
-private:
   std::string		ModeToString();
   std::string		&colorise_string(std::string &str);
 

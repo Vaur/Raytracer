@@ -5,7 +5,7 @@
 // Login   <vaur@epitech.net>
 //
 // Started on  Sat May 24 13:44:59 2014 vaur
-// Last update Fri Jun  6 19:57:21 2014 vaur
+// Last update Tue Jun 10 22:31:22 2014 vaur
 //
 
 /** \file MsgBox.cpp
@@ -62,6 +62,21 @@ void		MsgBox::setMode(MsgBox::t_mode mode)
   this->_mode = mode;
 }
 
+/**
+ * Return a MsgHandler that will get the messages and return them to the MsgBox
+ */
+
+MsgBox::MsgHandler	MsgBox::info()
+{
+  MsgHandler		handler(*this);
+  return (handler);
+}
+
+/*
+**
+** Private
+**
+*/
 
 /**
  * Decoration that is put before the message to display
@@ -182,12 +197,6 @@ void			MsgBox::decorateOut()
   // if (_log_on == true)
 
 }
-
-/*
-**
-** Private
-**
-*/
 
 /**
  * Return a `std::string` that describe the current mode.
