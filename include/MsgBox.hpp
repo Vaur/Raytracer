@@ -5,7 +5,7 @@
 // Login   <vaur@epitech.net>
 //
 // Started on  Fri May 23 23:08:47 2014 vaur
-// Last update Thu Jun 19 15:58:17 2014 vaur
+// Last update Mon Jun 23 13:45:10 2014 vaur
 //
 
 /** \file MsgBox.hpp
@@ -23,51 +23,6 @@
 */
 
 # include	<iostream>
-
-/*
-** Define
-*/
-
-
-# if		DEBUG_ == 1
-/**
- *  Macro MSG if DEBUG_ (defined by Makefile) is set a 1
- *
- *  DEBUG_ == 1 means that the program is in debug mode and that more information should be displayed
- */
-
-// #  define	DEBUG(msg)	msgbox.decorateIn(MsgBox::DEBUG, __func__, __LINE__) << msg; msgbox.decorateOut()
-// #  define	ERROR(msg)	msgbox.decorateIn(MsgBox::ERROR, __func__, __LINE__) << msg; msgbox.decorateOut()
-// #  define	INFO(msg)	msgbox.decorateIn(MsgBox::INFO, __func__, __LINE__) << msg; msgbox.decorateOut()
-// #  define	MSG(msg)	msgbox.decorateIn(__func__, __LINE__) << msg; msgbox.decorateOut()
-// #  define	WARNING(msg)	msgbox.decorateIn(MsgBox::WARNING, __func__, __LINE__) << msg; msgbox.decorateOut()
-
-# else
-
-/**
- *  when program is in release mode, only display program name and type of information displayed
- */
-
-// #  define	DEBUG(msg)
-// #  define	ERROR(msg)	msgbox.decorateIn(MsgBox::ERROR) << msg; msgbox.decorateOut()
-// #  define	INFO(msg)	msgbox.decorateIn(MsgBox::INFO) << msg; msgbox.decorateOut()
-// #  define	MSG(msg)	msgbox.decorateIn() << msg; msgbox.decorateOut()
-// #  define	WARNING(msg)	msgbox.decorateIn(MsgBox::WARNING) << msg; msgbox.decorateOut()
-
-#  define	DEBUG(msg)
-#  define	ERROR(msg)
-#  define	INFO(msg)
-#  define	MSG(msg)
-#  define	WARNING(msg)
-
-# endif
-
-#  define	DEBUG(msg)
-#  define	ERROR(msg)
-#  define	INFO(msg)
-#  define	MSG(msg)
-#  define	WARNING(msg)
-
 
 /*
 ** Class
