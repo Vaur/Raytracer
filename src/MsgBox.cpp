@@ -5,7 +5,7 @@
 // Login   <vaur@epitech.net>
 //
 // Started on  Sat May 24 13:44:59 2014 vaur
-// Last update Thu Jun 19 16:00:13 2014 vaur
+// Last update Mon Jun 23 14:13:53 2014 vaur
 //
 
 /** \file MsgBox.cpp
@@ -39,6 +39,7 @@ MsgBox::MsgBox(const std::string &progname)
   this->_mode = MsgBox::INFO;
   this->_progname = progname;
   this->_colorEnabled = true;
+  this->_debugEnabled = true;
 }
 
 /*
@@ -72,18 +73,41 @@ MsgBox::MsgHandler	MsgBox::msg()
   return (handler);
 }
 
-
-// MsgBox::MsgHandler	MsgBox::msg(c)
-// {
-//   MsgHandler		handler(*this);
-//   return (handler);
-// }
-
-
 /** Switch the mode of the MsgBox and return a MsgHandler that will take care of the message */
 MsgBox::MsgHandler	MsgBox::msg(MsgBox::t_mode mode)
 {
   MsgHandler		handler(*this);
+
+  setMode(mode);
+  return (handler);
+}
+
+
+/** Return a MsgHandler that will get the messages and return them to the MsgBox
+ *  MsgHandler receive in CTOR addtionnal information
+ *
+ */
+
+MsgBox::MsgHandler	MsgBox::msg(const char *func, int line)
+{
+  // if (_debugEnabled == true)
+    MsgHandler		handler(*this, func, line);
+  // else
+    // MsgHandler		handler(*this);
+  return (handler);
+}
+
+/**
+ * Switch the mode of the MsgBox and return a MsgHandler that will take care of the message
+ * MsgHandler receive in CTOR addtionnal information about the context of the call
+ */
+
+MsgBox::MsgHandler	MsgBox::msg(const char *func, int line, MsgBox::t_mode mode)
+{
+  // if (_debugEnabled == true)
+    MsgHandler		handler(*this, func, line);
+  // else
+  //   MsgHandler		handler(*this);
 
   setMode(mode);
   return (handler);
