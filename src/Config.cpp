@@ -5,7 +5,7 @@
 // Login   <vaur@epitech.net>
 //
 // Started on  Sun Jun  1 07:49:30 2014 vaur
-// Last update Fri Jun  6 16:29:52 2014 vaur
+// Last update Mon Jun 23 13:45:38 2014 vaur
 //
 
 
@@ -31,7 +31,7 @@ Config::Config(int argc, char **argv, MsgBox &msgbox)
 {
   (void)argc;
   (void)argv;
-  MSG("Loading Configuration");
+  msgbox.msg() << "Loading Configuration";
 }
 
 /*
