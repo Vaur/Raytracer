@@ -5,7 +5,7 @@
 // Login   <vaur@epitech.net>
 //
 // Started on  Fri May 23 23:08:47 2014 vaur
-// Last update Mon Jun 23 14:11:58 2014 vaur
+// Last update Mon Jun 23 14:31:42 2014 vaur
 //
 
 /** \file MsgBox.hpp
@@ -116,7 +116,8 @@ private:
   template <class T>
   MsgBox		&operator<<(const T msg)
   {
-    std::cout << msg;
+    if (_mode != DEBUG || _debugEnabled == true)
+      std::cout << msg;
     return (*this);
   }
 

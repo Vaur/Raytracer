@@ -5,7 +5,7 @@
 // Login   <vaur@epitech.net>
 //
 // Started on  Sat May 24 13:44:59 2014 vaur
-// Last update Mon Jun 23 14:25:35 2014 vaur
+// Last update Mon Jun 23 14:32:48 2014 vaur
 //
 
 /** \file MsgBox.cpp
@@ -194,11 +194,8 @@ MsgBox			&MsgBox::decorateIn(const char *func, int line)
   decorate << func_str;
   decorate << line_str;
 
-  // std::cout << colorise_string(progname_str) << " " <<  colorise_string(mode_str) << "\t";
-  // std::cout << colorise_string(func_str) << "\t" << colorise_string(line_str) << " ";
-
-  std::cout << progname_str << " " <<  mode_str << "\t";
-  std::cout << func_str << "\t" << line_str << " ";
+  *this << progname_str << " " <<  mode_str << "\t";
+  *this << func_str << "\t" << line_str << " ";
 
   return (*this);
 }
@@ -232,9 +229,8 @@ MsgBox			&MsgBox::decorateIn(MsgBox::t_mode tmp_mode, const char *func, int line
 
 void			MsgBox::decorateOut()
 {
-  std::cout << std::endl;
-  // if (_log_on == true)
-
+  if (_mode != DEBUG || _debugEnabled == true)
+    std::cout << std::endl;
 }
 
 /**
