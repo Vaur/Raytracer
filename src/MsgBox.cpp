@@ -5,7 +5,7 @@
 // Login   <vaur@epitech.net>
 //
 // Started on  Sat May 24 13:44:59 2014 vaur
-// Last update Tue Jun 10 22:31:22 2014 vaur
+// Last update Thu Jun 19 16:00:13 2014 vaur
 //
 
 /** \file MsgBox.cpp
@@ -66,9 +66,26 @@ void		MsgBox::setMode(MsgBox::t_mode mode)
  * Return a MsgHandler that will get the messages and return them to the MsgBox
  */
 
-MsgBox::MsgHandler	MsgBox::info()
+MsgBox::MsgHandler	MsgBox::msg()
 {
   MsgHandler		handler(*this);
+  return (handler);
+}
+
+
+// MsgBox::MsgHandler	MsgBox::msg(c)
+// {
+//   MsgHandler		handler(*this);
+//   return (handler);
+// }
+
+
+/** Switch the mode of the MsgBox and return a MsgHandler that will take care of the message */
+MsgBox::MsgHandler	MsgBox::msg(MsgBox::t_mode mode)
+{
+  MsgHandler		handler(*this);
+
+  setMode(mode);
   return (handler);
 }
 

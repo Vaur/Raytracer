@@ -5,7 +5,7 @@
 // Login   <vaur@epitech.net>
 //
 // Started on  Fri May 23 23:08:47 2014 vaur
-// Last update Tue Jun 10 22:45:43 2014 vaur
+// Last update Thu Jun 19 15:58:17 2014 vaur
 //
 
 /** \file MsgBox.hpp
@@ -136,7 +136,9 @@ public:
     MsgBox		*_msgbox;
   };
 
-  MsgHandler		info();
+  MsgHandler		msg();
+  MsgHandler		msg(t_mode);
+
 private:
 
 
