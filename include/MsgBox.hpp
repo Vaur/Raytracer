@@ -5,7 +5,7 @@
 // Login   <vaur@epitech.net>
 //
 // Started on  Fri May 23 23:08:47 2014 vaur
-// Last update Mon Jun 23 14:31:42 2014 vaur
+// Last update Mon Jun 23 14:37:58 2014 vaur
 //
 
 /** \file MsgBox.hpp
@@ -36,12 +36,12 @@
 # define	CONTEXT	__func__, __LINE__
 
 /**
- * MsgBox is an object to handle messages. Instead of doing `std::cout << msg << std::endl;` call `MSG(msg);`.
- * MsgBox will add severals informations depending on if the program is in debug mode or release mode.
- * If a logfile is set, it will also write inside the file, without color.
+ * MsgBox is an object to handle messages. Instead of doing `std::cout << msg << std::endl;` call `MsgBox.msg()`
  *
- * @warning function like operator<<(), decorateIn(), decorateOut(), should not be used without MSG macro.
- * Unless you know what you're doing.
+ * You can add some information to the message when _debugEnabled is true by using the macro CONTEXT.
+ * Exemple: `MsgBox.msg(CONTEXT)`
+ *
+ * If a logfile is set, it will also write inside the file, without color.
  *
  * @done MsgBox create now a single object when MsgBox::msg() is called. On creation that object display before the message some context. then
  * MsgBox will be returned by a wrapper that will create the Object
@@ -109,6 +109,7 @@ private:
 
   /**
    * Templated operator overload, takes everything and put it into std::cout
+   * @done 23/06/2014 if _mode is DEBUG and debug is disable dont display msg
    * @todo if msg mode is error instead of output on `std::cout` output on `std::cerr`
    * @todo if log is enabled also redirect msg into stream to logfile.
    */
