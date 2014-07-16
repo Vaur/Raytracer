@@ -5,7 +5,7 @@
 // Login   <vaur@epitech.net>
 //
 // Started on  Sun Jun  1 01:57:37 2014 vaur
-// Last update Wed Jul 16 17:56:54 2014 vaur
+// Last update Wed Jul 16 19:44:09 2014 vaur
 //
 
 /** \file Core.cpp
@@ -199,7 +199,7 @@ void		Core::test12()
   Coordinate	coord(2, 4, 6);
   Coordinate	coord3(3, 6, 9);
 
-  testNb(11);
+  testNb(12);
   if (coord3 == coord + coord2)
     testOk();
   else
@@ -212,13 +212,38 @@ void		Core::test13()
   Coordinate	coord(2, 4, 6);
   Coordinate	coord3(1, 2, 3);
 
-  testNb(11);
+  testNb(13);
   if (coord3 == coord - coord2)
     testOk();
   else
     testNotOk();
 }
 
+void		Core::test14()
+{
+  Coordinate	coord2(1, 2, 3);
+  Coordinate	coord(2, 4, 6);
+  Coordinate	coord3(2, 8, 18);
+
+  testNb(14);
+  if (coord3 == coord * coord2)
+    testOk();
+  else
+    testNotOk();
+}
+
+void		Core::test15()
+{
+  Coordinate	coord2(1, 2, 3);
+  Coordinate	coord(2, 4, 6);
+  Coordinate	coord3(2, 8, 18);
+
+  testNb(15);
+  if (coord2 == coord3 / coord)
+    testOk();
+  else
+    testNotOk();
+}
 
 /**
  * @return	value is either `EXIT_FAILURE` or `EXIT_SUCCESS`
@@ -244,6 +269,7 @@ int		Core::run()
   msgbox.msg(CONTEXT, MsgBox::INFO) << "Calcul between coordinates";
   test12();
   test13();
-
+  test14();
+  test15();
   return (EXIT_SUCCESS);
 }
