@@ -14,4 +14,5 @@ Log
 ===
 
 16/07/2014:
-I'm currently working on the Coordinate object that stores coordinates and allows us to do calcul on it.
+- Coordinate class is now done. Next things to do is the objects.
+- I'm currently working on the Coordinate class that stores coordinates and allows us to do calcul on it.
