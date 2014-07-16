@@ -5,7 +5,7 @@
 // Login   <vaur@epitech.net>
 //
 // Started on  Sun Jun  1 01:57:37 2014 vaur
-// Last update Wed Jul 16 17:07:33 2014 vaur
+// Last update Wed Jul 16 17:12:33 2014 vaur
 //
 
 /** \file Core.cpp
@@ -40,12 +40,17 @@ Core::~Core()
 {
 }
 
+void	Core::testNb(int nb)
+{
+  msgbox.msg(CONTEXT, MsgBox::INFO) << "--- test " << nb << " ---";
+}
+
 void		Core::test1()
 {
   Coordinate	coord(1, 1, 1);
   Coordinate	coord2(1, 1, 1);
 
-  msgbox.msg(CONTEXT, MsgBox::INFO) << "--- test 1 ---";
+  testNb(1);
   if (coord == coord2)
     msgbox.msg(CONTEXT, MsgBox::INFO) << "-\tok";
   else
@@ -57,7 +62,7 @@ void		Core::test2()
   Coordinate	coord(1, -1, 1);
   Coordinate	coord2(1, 1, 1);
 
-  msgbox.msg(CONTEXT, MsgBox::INFO) << "--- test 2 ---";
+  testNb(2);
   if (coord != coord2)
     msgbox.msg(CONTEXT, MsgBox::INFO) << "-\tok";
   else
@@ -69,7 +74,7 @@ void		Core::test3()
   Coordinate	coord(1, 1, -1);
   Coordinate	coord2(1, 1, 1);
 
-  msgbox.msg(CONTEXT, MsgBox::INFO) << "--- test 3 ---";
+  testNb(3);
   if (coord != coord2)
     msgbox.msg(CONTEXT, MsgBox::INFO) << "-\tok";
   else
@@ -81,7 +86,7 @@ void		Core::test4()
   Coordinate	coord(-1, 1, 1);
   Coordinate	coord2(1, 1, 1);
 
-  msgbox.msg(CONTEXT, MsgBox::INFO) << "--- test 4 ---";
+  testNb(4);
   if (coord != coord2)
     msgbox.msg(CONTEXT, MsgBox::INFO) << "-\tok";
   else
@@ -93,7 +98,7 @@ void		Core::test5()
   Coordinate	coord2(1, -1, 1);
   Coordinate	coord(1, 1, 1);
 
-  msgbox.msg(CONTEXT, MsgBox::INFO) << "--- test 5 ---";
+  testNb(5);
   if (coord != coord2)
     msgbox.msg(CONTEXT, MsgBox::INFO) << "-\tok";
   else
@@ -105,7 +110,7 @@ void		Core::test6()
   Coordinate	coord2(1, 1, -1);
   Coordinate	coord(1, 1, 1);
 
-  msgbox.msg(CONTEXT, MsgBox::INFO) << "--- test 6 ---";
+  testNb(6);
   if (coord != coord2)
     msgbox.msg(CONTEXT, MsgBox::INFO) << "-\tok";
   else
@@ -117,7 +122,7 @@ void		Core::test7()
   Coordinate	coord2(-1, 1, 1);
   Coordinate	coord(1, 1, 1);
 
-  msgbox.msg(CONTEXT, MsgBox::INFO) << "--- test 7 ---";
+  testNb(7);
   if (coord != coord2)
     msgbox.msg(CONTEXT, MsgBox::INFO) << "-\tok";
   else
