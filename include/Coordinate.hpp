@@ -5,7 +5,7 @@
 // Login   <vaur@epitech.net>
 //
 // Started on  Sat May 31 04:49:43 2014 vaur
-// Last update Wed Jul 16 14:25:55 2014 vaur
+// Last update Wed Jul 16 14:50:20 2014 vaur
 //
 
 /** \file Coordinate.hpp
@@ -43,6 +43,13 @@ public:
 
   //operator overload
   bool		operator==(const Coordinate &o);
+  Coordinate	&operator=(const Coordinate &o);
+  Coordinate	operator+(const Coordinate &o);
+  Coordinate	operator-(const Coordinate &o);
+  // Coordinate	operator*(const Coordinate &o);
+  // Coordinate	operator/(const Coordinate &o);
+
+
 
 private:
   t_unit	_x;

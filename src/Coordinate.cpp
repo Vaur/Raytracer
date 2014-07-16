@@ -5,7 +5,7 @@
 // Login   <vaur@epitech.net>
 //
 // Started on  Sat May 31 04:54:31 2014 vaur
-// Last update Wed Jul 16 14:25:49 2014 vaur
+// Last update Wed Jul 16 14:50:09 2014 vaur
 //
 
 /** \file Coordinate.cpp
@@ -73,15 +73,36 @@ Coordinate::t_unit	Coordinate::getZ() const
   return (_z);
 }
 
-/**
- * Operator overload to compare coordinates
- */
-
+/** Operator overload to compare coordinates */
 bool	Coordinate::operator==(const Coordinate &o)
 {
   if (this->_x == o.getX() && this->_y == o.getY() && this->_z == o.getZ())
     return (true);
   return (false);
+}
+
+/** Assign values to Coordinate from another coordinate */
+Coordinate	&operator=(const Coordinate &o)
+{
+  _x = o._x;
+  _y = o._y;
+  _z = o._z;
+}
+
+/** Addition between 2 Coordinates */
+Coordinate	operator+(const Coordinate &o)
+{
+  Coordinate	res(_x + o._x, _y + o._y, _z + o._z);
+
+  return (res);
+}
+
+/** Substraction between 2 Coordinates */
+Coordinate	operator-(const Coordinate &o)
+{
+  Coordinate	res(_x - o._x, _y - o._y, _z - o._z);
+
+  return (res);
 }
 
 /**
