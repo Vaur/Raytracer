@@ -5,7 +5,7 @@
 // Login   <vaur@epitech.net>
 //
 // Started on  Sun Jun  1 01:57:37 2014 vaur
-// Last update Wed Jul 16 17:12:33 2014 vaur
+// Last update Wed Jul 16 17:28:58 2014 vaur
 //
 
 /** \file Core.cpp
@@ -45,6 +45,17 @@ void	Core::testNb(int nb)
   msgbox.msg(CONTEXT, MsgBox::INFO) << "--- test " << nb << " ---";
 }
 
+void	Core::testOk()
+{
+  msgbox.msg(CONTEXT, MsgBox::INFO) << "ok";
+}
+
+void	Core::testNotOk()
+{
+  msgbox.msg(CONTEXT, MsgBox::ERROR) << "not ok";
+}
+
+
 void		Core::test1()
 {
   Coordinate	coord(1, 1, 1);
@@ -52,9 +63,9 @@ void		Core::test1()
 
   testNb(1);
   if (coord == coord2)
-    msgbox.msg(CONTEXT, MsgBox::INFO) << "-\tok";
+    testOk();
   else
-    msgbox.msg(CONTEXT, MsgBox::ERROR) << "-\tnot ok";
+    testNotOk();
 }
 
 void		Core::test2()
@@ -64,9 +75,9 @@ void		Core::test2()
 
   testNb(2);
   if (coord != coord2)
-    msgbox.msg(CONTEXT, MsgBox::INFO) << "-\tok";
+    testOk();
   else
-    msgbox.msg(CONTEXT, MsgBox::ERROR) << "-\tnot ok";
+    testNotOk();
 }
 
 void		Core::test3()
@@ -76,9 +87,9 @@ void		Core::test3()
 
   testNb(3);
   if (coord != coord2)
-    msgbox.msg(CONTEXT, MsgBox::INFO) << "-\tok";
+    testOk();
   else
-    msgbox.msg(CONTEXT, MsgBox::ERROR) << "-\tnot ok";
+    testNotOk();
 }
 
 void		Core::test4()
@@ -88,9 +99,9 @@ void		Core::test4()
 
   testNb(4);
   if (coord != coord2)
-    msgbox.msg(CONTEXT, MsgBox::INFO) << "-\tok";
+    testOk();
   else
-    msgbox.msg(CONTEXT, MsgBox::ERROR) << "-\tnot ok";
+    testNotOk();
 }
 
 void		Core::test5()
@@ -100,9 +111,9 @@ void		Core::test5()
 
   testNb(5);
   if (coord != coord2)
-    msgbox.msg(CONTEXT, MsgBox::INFO) << "-\tok";
+    testOk();
   else
-    msgbox.msg(CONTEXT, MsgBox::ERROR) << "-\tnot ok";
+    testNotOk();
 }
 
 void		Core::test6()
@@ -112,9 +123,9 @@ void		Core::test6()
 
   testNb(6);
   if (coord != coord2)
-    msgbox.msg(CONTEXT, MsgBox::INFO) << "-\tok";
+    testOk();
   else
-    msgbox.msg(CONTEXT, MsgBox::ERROR) << "-\tnot ok";
+    testNotOk();
 }
 
 void		Core::test7()
@@ -124,9 +135,9 @@ void		Core::test7()
 
   testNb(7);
   if (coord != coord2)
-    msgbox.msg(CONTEXT, MsgBox::INFO) << "-\tok";
+    testOk();
   else
-    msgbox.msg(CONTEXT, MsgBox::ERROR) << "-\tnot ok";
+    testNotOk();
 }
 
 /**

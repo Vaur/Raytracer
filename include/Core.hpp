@@ -5,7 +5,7 @@
 // Login   <vaur@epitech.net>
 //
 // Started on  Sun Jun  1 01:42:07 2014 vaur
-// Last update Wed Jul 16 17:11:34 2014 vaur
+// Last update Wed Jul 16 17:15:01 2014 vaur
 //
 
 #ifndef		CORE_H
@@ -47,6 +47,8 @@ public:
 private:
 
   void		testNb(int nb);
+  void		testOk();
+  void		testNotOk();
 
   void		test1();
   void		test2();
