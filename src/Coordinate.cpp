@@ -5,7 +5,7 @@
 // Login   <vaur@epitech.net>
 //
 // Started on  Sat May 31 04:54:31 2014 vaur
-// Last update Wed Jul 16 14:50:09 2014 vaur
+// Last update Wed Jul 16 16:27:40 2014 vaur
 //
 
 /** \file Coordinate.cpp
@@ -82,15 +82,16 @@ bool	Coordinate::operator==(const Coordinate &o)
 }
 
 /** Assign values to Coordinate from another coordinate */
-Coordinate	&operator=(const Coordinate &o)
+Coordinate	&Coordinate::operator=(const Coordinate &o)
 {
   _x = o._x;
   _y = o._y;
   _z = o._z;
+  return (*this);
 }
 
 /** Addition between 2 Coordinates */
-Coordinate	operator+(const Coordinate &o)
+Coordinate	Coordinate::operator+(const Coordinate &o)
 {
   Coordinate	res(_x + o._x, _y + o._y, _z + o._z);
 
@@ -98,17 +99,30 @@ Coordinate	operator+(const Coordinate &o)
 }
 
 /** Substraction between 2 Coordinates */
-Coordinate	operator-(const Coordinate &o)
+Coordinate	Coordinate::operator-(const Coordinate &o)
 {
   Coordinate	res(_x - o._x, _y - o._y, _z - o._z);
 
   return (res);
 }
 
-/**
- * Operator overload for display
- */
+/** Multiplication between 2 Coordinates */
+Coordinate	Coordinate::operator*(const Coordinate &o)
+{
+  Coordinate	res(_x * o._x, _y * o._y, _z * o._z);
 
+  return (res);
+}
+
+/** Division between 2 Coordinates */
+Coordinate	Coordinate::operator/(const Coordinate &o)
+{
+  Coordinate	res(_x / o._x, _y / o._y, _z / o._z);
+
+  return (res);
+}
+
+/** Operator overload for display */
 std::ostream	&operator<<(std::ostream &o, const Coordinate &coord)
 {
   o << "(" << coord.getX() << ", " << coord.getY() << ", " << coord.getZ() << ")";
