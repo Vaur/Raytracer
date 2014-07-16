@@ -5,7 +5,7 @@
 // Login   <vaur@epitech.net>
 //
 // Started on  Sun Jun  1 01:42:07 2014 vaur
-// Last update Sun Jun  1 08:01:33 2014 vaur
+// Last update Wed Jul 16 16:54:29 2014 vaur
 //
 
 #ifndef		CORE_H
@@ -45,6 +45,14 @@ public:
   int		run();
 
 private:
+  void		test1();
+  void		test2();
+  void		test3();
+  void		test4();
+  void		test5();
+  void		test6();
+  void		test7();
+
   MsgBox	msgbox;
   Config	_conf;
 };
