@@ -5,7 +5,7 @@
 // Login   <vaur@epitech.net>
 //
 // Started on  Sun Jun  1 01:57:37 2014 vaur
-// Last update Wed Jul 16 17:28:58 2014 vaur
+// Last update Wed Jul 16 17:52:30 2014 vaur
 //
 
 /** \file Core.cpp
@@ -140,12 +140,67 @@ void		Core::test7()
     testNotOk();
 }
 
+/*
+** Coordonates and i
+*/
+
+void		Core::test8()
+{
+  Coordinate	coord2(1, 2, 3);
+  Coordinate	coord(2, 4, 6);
+
+  testNb(8);
+  if (coord == coord2 * 2)
+    testOk();
+  else
+    testNotOk();
+}
+
+void		Core::test9()
+{
+  Coordinate	coord2(-1, -2, -3);
+  Coordinate	coord(2, 4, 6);
+
+  testNb(9);
+  if (coord == coord2 * -2)
+    testOk();
+  else
+    testNotOk();
+}
+
+void		Core::test10()
+{
+  Coordinate	coord2(1, 2, 3);
+  Coordinate	coord(2, 4, 6);
+
+  testNb(10);
+  if (coord2 == coord / 2)
+    testOk();
+  else
+    testNotOk();
+}
+
+
+void		Core::test11()
+{
+  Coordinate	coord2(1, 2, 3);
+  Coordinate	coord(-2, -4, -6);
+
+  testNb(11);
+  if (coord2 == coord / -2)
+    testOk();
+  else
+    testNotOk();
+}
+
+
 /**
  * @return	value is either `EXIT_FAILURE` or `EXIT_SUCCESS`
  */
 
 int		Core::run()
 {
+  msgbox.msg(CONTEXT, MsgBox::INFO) << "Coordinate Comparaison";
   test1();
   test2();
   test3();
@@ -153,6 +208,12 @@ int		Core::run()
   test5();
   test6();
   test7();
+
+  msgbox.msg(CONTEXT, MsgBox::INFO) << "Calcul between coordinate and i";
+  test8();
+  test9();
+  test10();
+  test11();
 
   return (EXIT_SUCCESS);
 }
