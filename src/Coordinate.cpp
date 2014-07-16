@@ -5,7 +5,7 @@
 // Login   <vaur@epitech.net>
 //
 // Started on  Sat May 31 04:54:31 2014 vaur
-// Last update Wed Jul 16 16:39:02 2014 vaur
+// Last update Wed Jul 16 16:59:01 2014 vaur
 //
 
 /** \file Coordinate.cpp
@@ -80,6 +80,13 @@ bool	Coordinate::operator==(const Coordinate &o)
     return (true);
   return (false);
 }
+
+/** Return true if the 2 coordinates are different */
+bool	Coordinate::operator!=(const Coordinate &o)
+{
+  return (!(*this == o));
+}
+
 
 /** Assign values to Coordinate from another coordinate */
 Coordinate	&Coordinate::operator=(const Coordinate &o)

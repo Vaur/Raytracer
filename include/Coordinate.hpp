@@ -5,7 +5,7 @@
 // Login   <vaur@epitech.net>
 //
 // Started on  Sat May 31 04:49:43 2014 vaur
-// Last update Wed Jul 16 16:37:15 2014 vaur
+// Last update Wed Jul 16 16:59:30 2014 vaur
 //
 
 /** \file Coordinate.hpp
@@ -42,7 +42,11 @@ public:
   t_unit	getZ() const;
 
   //operator overload
+
+  //Compare coordinates
   bool		operator==(const Coordinate &o);
+  bool		operator!=(const Coordinate &o);
+
   Coordinate	&operator=(const Coordinate &o);
 
   //calcul between coordinates
