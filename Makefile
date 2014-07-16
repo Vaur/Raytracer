@@ -5,7 +5,7 @@
 ## Login   <devill_x@epitech.net>
 ##
 ## Started on  Mon Jan 13 08:15:23 2014 Xavier Devilliers
-## Last update Thu Jun 19 15:50:47 2014 vaur
+## Last update Wed Jul 16 14:24:55 2014 vaur
 ##
 
 ########################################################################
@@ -39,7 +39,7 @@ D_OBJ = 		./obj/
 D_NAME =		./
 
 SRC=			Config.cpp		\
-			Coordonate.cpp		\
+			Coordinate.cpp		\
 			Core.cpp		\
 			DecorateBracket.cpp	\
 			main.cpp		\
