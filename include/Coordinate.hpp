@@ -5,7 +5,7 @@
 // Login   <vaur@epitech.net>
 //
 // Started on  Sat May 31 04:49:43 2014 vaur
-// Last update Wed Jul 16 16:59:30 2014 vaur
+// Last update Thu Jul 17 07:26:57 2014 vaur
 //
 
 /** \file Coordinate.hpp
@@ -14,6 +14,12 @@
 
 #ifndef		COORDINATE_H
 # define	COORDINATE_H
+
+/*
+** Include
+*/
+
+# include	"Unit.hpp"
 
 /*
 ** Class
@@ -30,7 +36,7 @@ class		Coordinate
 {
 public:
   /** Type of unit used by Coordinate */
-  typedef float		t_unit;
+  typedef RT::t_unit	t_unit;
 
   //ctor & dtor
   Coordinate(t_unit x, t_unit y, t_unit z);
