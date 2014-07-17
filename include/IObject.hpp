@@ -5,7 +5,7 @@
 // Login   <vaur@epitech.net>
 //
 // Started on  Thu Jul 17 02:05:47 2014 vaur
-// Last update Thu Jul 17 07:19:45 2014 vaur
+// Last update Thu Jul 17 07:42:49 2014 vaur
 //
 
 #ifndef		IOBJECT_H
@@ -17,7 +17,7 @@
 
 
 /** Interface for every objects */
-class IObject
+class				IObject
 {
 public:
 
@@ -28,11 +28,17 @@ public:
       UNKNOWN
     };
 
-  //ctor & dtor
+  /** Unit used for distances */
+  typedef RT::t_unit		t_unit;
+
+  //dtor
   virtual			~IObject(){};
 
   virtual const Coordinate	&getPos()	const = 0;
   virtual e_type		getType()	const = 0;
 };
+
+std::ostream			&operator<<(std::ostream &o, const IObject *);
+std::ostream			&operator<<(std::ostream &o, const IObject &);
 
 #endif      /* !IOBJECT_H_ */
